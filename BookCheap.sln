@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{E99FEAB2-9226-4732-B205-7F90B68D34D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "Business\DomainModel\DomainModel.csproj", "{679EE7B4-0FE6-4F43-AED5-9DC45930D864}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Business\Interfaces\Interfaces.csproj", "{40028392-3ED9-4E9E-BEDD-1640401F21BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{FC25881C-B77E-4C0C-B076-BCB62A706C40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{0864CA60-CF0C-4A78-A7A6-A81059C013D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{AE9C8A4C-2506-4035-A446-6678CD5CF68C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "Persistence\DataAccess\DataAccess.csproj", "{CEB60297-238C-4AAF-AAB0-29E06935AA3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappings", "Persistence\Mappings\Mappings.csproj", "{AD766870-FBD3-4DF2-92B8-5ECB6F97230E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "Clients\WebClient\WebClient.csproj", "{C8BFA4BC-4A30-4958-99AE-5741D4B6014E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{679EE7B4-0FE6-4F43-AED5-9DC45930D864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{679EE7B4-0FE6-4F43-AED5-9DC45930D864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{679EE7B4-0FE6-4F43-AED5-9DC45930D864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{679EE7B4-0FE6-4F43-AED5-9DC45930D864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40028392-3ED9-4E9E-BEDD-1640401F21BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40028392-3ED9-4E9E-BEDD-1640401F21BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40028392-3ED9-4E9E-BEDD-1640401F21BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40028392-3ED9-4E9E-BEDD-1640401F21BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC25881C-B77E-4C0C-B076-BCB62A706C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC25881C-B77E-4C0C-B076-BCB62A706C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC25881C-B77E-4C0C-B076-BCB62A706C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC25881C-B77E-4C0C-B076-BCB62A706C40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB60297-238C-4AAF-AAB0-29E06935AA3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB60297-238C-4AAF-AAB0-29E06935AA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB60297-238C-4AAF-AAB0-29E06935AA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB60297-238C-4AAF-AAB0-29E06935AA3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD766870-FBD3-4DF2-92B8-5ECB6F97230E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD766870-FBD3-4DF2-92B8-5ECB6F97230E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD766870-FBD3-4DF2-92B8-5ECB6F97230E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD766870-FBD3-4DF2-92B8-5ECB6F97230E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8BFA4BC-4A30-4958-99AE-5741D4B6014E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8BFA4BC-4A30-4958-99AE-5741D4B6014E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8BFA4BC-4A30-4958-99AE-5741D4B6014E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8BFA4BC-4A30-4958-99AE-5741D4B6014E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{679EE7B4-0FE6-4F43-AED5-9DC45930D864} = {E99FEAB2-9226-4732-B205-7F90B68D34D9}
+		{40028392-3ED9-4E9E-BEDD-1640401F21BE} = {E99FEAB2-9226-4732-B205-7F90B68D34D9}
+		{CEB60297-238C-4AAF-AAB0-29E06935AA3F} = {AE9C8A4C-2506-4035-A446-6678CD5CF68C}
+		{AD766870-FBD3-4DF2-92B8-5ECB6F97230E} = {AE9C8A4C-2506-4035-A446-6678CD5CF68C}
+		{C8BFA4BC-4A30-4958-99AE-5741D4B6014E} = {0864CA60-CF0C-4A78-A7A6-A81059C013D2}
+	EndGlobalSection
+EndGlobal
