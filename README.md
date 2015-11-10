@@ -13,7 +13,7 @@ Wszystkie zmienne, metody klasy itd.. nazywamy wedlug konwencji przyjetej przez 
 
   Najwazniejsze:
   
-    1. nazwy klas i metod zaczynają się z dużej litery, poszczegolne czlony tez (CamelCase) np. GameTable
+    1. nazwy klas  zaczynają się z dużej litery, poszczegolne czlony tez (CamelCase) np. GameTable
     
     2. nazwy zmiennych i pól zaczynają się z małej litery (np. currentPosition)
     
@@ -22,4 +22,6 @@ Wszystkie zmienne, metody klasy itd.. nazywamy wedlug konwencji przyjetej przez 
     4. nazwy metod, właściwości, zdarzeń (ang. events) zaczynają się z dużej litery (np. MovePawn,
     Position, Moved)
     
-    5. wszystkie nazwy w języku angielskim
+    5. intefejsy zaczynamy od I (np. IDictionary)
+    
+    6. wszystkie nazwy w języku angielskim
