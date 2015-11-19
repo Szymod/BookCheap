@@ -1,0 +1,10 @@
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\Mappings\bin\Debug\Mappings.dll
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\Mappings\bin\Debug\Mappings.pdb
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\Mappings\bin\Debug\DomainModel.dll
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\Mappings\bin\Debug\EntityFramework.dll
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\Mappings\bin\Debug\EntityFramework.SqlServer.dll
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\Mappings\bin\Debug\DomainModel.pdb
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\Mappings\bin\Debug\EntityFramework.SqlServer.xml
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\Mappings\obj\Debug\Mappings.csprojResolveAssemblyReference.cache
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\Mappings\obj\Debug\Mappings.dll
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\Mappings\obj\Debug\Mappings.pdb

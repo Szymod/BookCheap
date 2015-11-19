@@ -1,0 +1,14 @@
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\bin\Debug\DataAccess.dll
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\bin\Debug\DataAccess.pdb
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\bin\Debug\DomainModel.dll
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\bin\Debug\EntityFramework.dll
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\bin\Debug\Interfaces.dll
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\bin\Debug\Mappings.dll
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\bin\Debug\DomainModel.pdb
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\bin\Debug\Interfaces.pdb
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\bin\Debug\Mappings.pdb
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\obj\Debug\DataAccess.dll
+D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Persistence\DataAccess\obj\Debug\DataAccess.pdb
