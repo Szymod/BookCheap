@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Helpers;
 
 namespace BookCheap.Busines.DomainModel
 {
@@ -31,10 +30,5 @@ namespace BookCheap.Busines.DomainModel
         public virtual ICollection<Comment> UserComments { get; set; }
         public virtual ICollection<Hotel> UserHotels { get; set; }
         public virtual ICollection<Reservation> UserReservations { get; set; }
-
-        public void SetPassword(string password)
-        {
-            Password = Crypto.Hash(password);
-        }
     }
 }

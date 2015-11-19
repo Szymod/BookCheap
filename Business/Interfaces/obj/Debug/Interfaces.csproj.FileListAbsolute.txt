@@ -1,7 +1,0 @@
-D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Business\Interfaces\bin\Debug\Interfaces.dll
-D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Business\Interfaces\bin\Debug\Interfaces.pdb
-D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Business\Interfaces\bin\Debug\DomainModel.dll
-D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Business\Interfaces\bin\Debug\DomainModel.pdb
-D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Business\Interfaces\obj\Debug\Interfaces.csprojResolveAssemblyReference.cache
-D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Business\Interfaces\obj\Debug\Interfaces.dll
-D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Business\Interfaces\obj\Debug\Interfaces.pdb

@@ -18,7 +18,7 @@ namespace BookCheap.Persistence.Mappings
             Property(x => x.Firstname).IsRequired().HasMaxLength(255);
             Property(x => x.Lastname).IsRequired().HasMaxLength(255);
             Property(x => x.Login).IsRequired().HasMaxLength(25);
-            Property(x => x.Password).IsRequired().HasMaxLength(64);
+            Property(x => x.Password).IsRequired().HasMaxLength(25);
             Property(x => x.Email).IsRequired().HasMaxLength(40);
             Property(x => x.Phone).IsRequired().HasMaxLength(12);
             Property(x => x.IsAdmin).IsRequired();

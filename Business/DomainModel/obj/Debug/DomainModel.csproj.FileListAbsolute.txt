@@ -1,5 +1,0 @@
-D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Business\DomainModel\bin\Debug\DomainModel.dll
-D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Business\DomainModel\bin\Debug\DomainModel.pdb
-D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Business\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
-D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Business\DomainModel\obj\Debug\DomainModel.dll
-D:\Szkoła\Projekt zespołowy\GitHub_BookCheap\BookCheap\Business\DomainModel\obj\Debug\DomainModel.pdb
