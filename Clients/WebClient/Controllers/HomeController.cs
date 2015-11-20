@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BookCheap.Busines.DomainModel;
+using BookCheap.Persistence.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,8 @@ namespace BookCheap.Clients.WebClient.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         public ActionResult Index()
         {
             return View();
@@ -23,6 +27,28 @@ namespace BookCheap.Clients.WebClient.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(User user)
+        {
+
+            if (ModelState.IsValid)
+            {
+                user.SetPassword(user.Password);
+                db.Users.Add(user);
+                db.SaveChanges();
+                ModelState.Clear();
+                user = null;
+            }
 
             return View();
         }
