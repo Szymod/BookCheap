@@ -19,11 +19,11 @@ namespace BookCheap.Clients.WebClient.Models
         [Display(Name = "Nazwisko")]
         public string Lastname { get; set; }
 
-        [Required(ErrorMessage = "Pole wymagane")]
+        [Required(ErrorMessage = "Pole wymagane", AllowEmptyStrings=false)]
         [Display(Name = "Login")]
         public string Login { get; set; }
 
-        [Required(ErrorMessage = "Pole wymagane")]
+        [Required(ErrorMessage = "Pole wymagane", AllowEmptyStrings=false)]
         [Display(Name = "Hasło")]
         public string Password { get; set; }
 

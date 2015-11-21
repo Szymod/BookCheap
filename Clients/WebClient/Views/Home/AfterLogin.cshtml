@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "AfterLogin";
+}
+
+<h2>Udane logowanie</h2>
+
+@if (Session["LoggedUser"] != null)
+{
+    <text>
+        Zalogowano: @Session["LoggedUser"].ToString();
+    </text>
+}

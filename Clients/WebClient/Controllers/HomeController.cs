@@ -62,5 +62,55 @@ namespace BookCheap.Clients.WebClient.Controllers
 
             return View();
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(User user)
+        {
+            if(ModelState.IsValid)
+            {
+                user.SetPassword(user.Password);
+                var v = db.Users.Where(a => a.Login.Equals(user.Login) && a.Password.Equals(user.Password)).FirstOrDefault();
+                if(v!=null)
+                {
+                    //if (user.IsBlocked == false)
+                    //{
+                        Session["LoggedUser"] = v.Login.ToString();
+                        HttpCookie Logged = new HttpCookie("LoggedUser", user.Login);
+                        return RedirectToAction("AfterLogin");
+                    //}
+                    //else
+                    //{
+                    //    ViewBag.Message = "Użytkownik zablokowany.";
+                    //    return View("Login");
+                    //}
+
+                }
+                else
+                {
+                    ViewBag.Message = "Niepoprawne dane logowania.";
+                    return View("Login");
+                }
+            }
+
+            return View("Index");
+        }
+
+        public ActionResult AfterLogin()
+        {
+            if(Session["LoggedUser"] !=null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
     }
 }
