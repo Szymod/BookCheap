@@ -43,11 +43,21 @@ namespace BookCheap.Clients.WebClient.Controllers
 
             if (ModelState.IsValid)
             {
-                user.SetPassword(user.Password);
-                db.Users.Add(user);
-                db.SaveChanges();
-                ModelState.Clear();
-                user = null;
+                var v = db.Users.Where(a => a.Login.Equals(user.Login)).FirstOrDefault();
+
+                if (v == null)
+                {
+                    user.SetPassword(user.Password);
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                    ModelState.Clear();
+                    user = null;
+                }
+                else
+                {
+                    ViewBag.message = "Użytkownik o podanym loginie już istnieje.";
+                    return View("~/Views/Home/Register.cshtml");
+                }
             }
 
             return View();
