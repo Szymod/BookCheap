@@ -1,4 +1,5 @@
 ﻿using BookCheap.Busines.DomainModel;
+using BookCheap.Clients.WebClient.App_Start;
 using BookCheap.Persistence.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,8 @@ using System.Web.Mvc;
 
 namespace BookCheap.Clients.WebClient.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
         public ActionResult Index()
         {
             return View();
@@ -43,13 +42,12 @@ namespace BookCheap.Clients.WebClient.Controllers
 
             if (ModelState.IsValid)
             {
-                var v = db.Users.Where(a => a.Login.Equals(user.Login)).FirstOrDefault();
+                var v = UnitOfWork.Users.GetAll().Where(a => a.Login.Equals(user.Login)).FirstOrDefault();
 
                 if (v == null)
                 {
                     user.SetPassword(user.Password);
-                    db.Users.Add(user);
-                    db.SaveChanges();
+                    UnitOfWork.Users.Add(user);
                     ModelState.Clear();
                     user = null;
                 }
@@ -75,7 +73,7 @@ namespace BookCheap.Clients.WebClient.Controllers
             if(ModelState.IsValid)
             {
                 user.SetPassword(user.Password);
-                var v = db.Users.Where(a => a.Login.Equals(user.Login) && a.Password.Equals(user.Password)).FirstOrDefault();
+                var v = UnitOfWork.Users.GetAll().Where(a => a.Login.Equals(user.Login) && a.Password.Equals(user.Password)).FirstOrDefault();
                 if(v!=null)
                 {
                     //if (user.IsBlocked == false)

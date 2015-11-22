@@ -154,6 +154,11 @@ namespace BookCheap.Persistence.DataAccess
             DbContext.SaveChanges();
         }
 
+        public bool HasChanges()
+        {
+            return DbContext.ChangeTracker.HasChanges();
+        }
+
         protected void CreateDbContext()
         {
             DbContext = new ApplicationDbContext();

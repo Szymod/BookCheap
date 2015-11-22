@@ -20,6 +20,7 @@ namespace BookCheap.Busines.Interfaces
         ITagsRepository Tags { get; }
         IUsersRepository Users { get; }
         void Commit();
+        bool HasChanges();
 
     }
 }
