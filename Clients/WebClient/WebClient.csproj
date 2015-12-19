@@ -205,6 +205,10 @@
       <Project>{40028392-3ed9-4e9e-bedd-1640401f21be}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Common\Crypto\Crypto.csproj">
+      <Project>{1a68580f-149e-4b3e-a2c9-5eb90d551b96}</Project>
+      <Name>Crypto</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Persistence\DataAccess\DataAccess.csproj">
       <Project>{ceb60297-238c-4aaf-aab0-29e06935aa3f}</Project>
       <Name>DataAccess</Name>

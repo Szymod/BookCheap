@@ -1,11 +1,13 @@
 ﻿using BookCheap.Busines.DomainModel;
 using BookCheap.Clients.WebClient.App_Start;
 using BookCheap.Persistence.DataAccess;
+using BookCheap.Common.Crypto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace BookCheap.Clients.WebClient.Controllers
 {
@@ -46,7 +48,7 @@ namespace BookCheap.Clients.WebClient.Controllers
 
                 if (v == null)
                 {
-                    user.SetPassword(user.Password);
+                    PasswordHash.CreateHash(user.Password);
                     UnitOfWork.Users.Add(user);
                     ModelState.Clear();
                     user = null;
@@ -72,14 +74,14 @@ namespace BookCheap.Clients.WebClient.Controllers
         {
             if(ModelState.IsValid)
             {
-                user.SetPassword(user.Password);
+                PasswordHash.CreateHash(user.Password);
                 var v = UnitOfWork.Users.GetAll().Where(a => a.Login.Equals(user.Login) && a.Password.Equals(user.Password)).FirstOrDefault();
                 if(v!=null)
                 {
                     //if (user.IsBlocked == false)
                     //{
-                        Session["LoggedUser"] = v.Login.ToString();
-                        HttpCookie Logged = new HttpCookie("LoggedUser", user.Login);
+                        Session["LoggedUser"] = v;
+                        FormsAuthentication.SetAuthCookie(v.Login, false);
                         return RedirectToAction("AfterLogin");
                     //}
                     //else
@@ -107,7 +109,7 @@ namespace BookCheap.Clients.WebClient.Controllers
             }
             else
             {
-                return RedirectToAction("Index");
+                return View("~/Views/Home/Index.cshtml");
             }
         }
     }
