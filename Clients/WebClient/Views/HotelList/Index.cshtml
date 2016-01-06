@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BookCheap.Busines.DomainModel.Hotel>
+
+
+@{
+    ViewBag.Title = "Hotele";
+}
+
+<h2>Lista Hoteli</h2>
+
+<table class="table">
+    <tr>
+        <td class="col-md-3"rowspan="7"></td>
+        <th></th>
+        <th>
+            Hotel
+        </th>
+        <th>
+            Ocena
+        </th>
+    </tr>
+   
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            <img class="img-circle" src="" alt="Teksty" width="150" height="150" />
+            </td>
+        <td>
+
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+
+        </td>
+        
+    </tr>
+   
+}
+
+
+</table>
