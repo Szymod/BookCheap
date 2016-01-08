@@ -1,4 +1,4 @@
-# BookCheap
+﻿# BookCheap
 Repozytorium założone na potrzeby projektu zespołowego 2015/2016 r. Projekt dotyczy zarządzania hotelami i rezerwacjami pokoi.
 
 Uruchomienie:
@@ -25,3 +25,13 @@ Wszystkie zmienne, metody klasy itd.. nazywamy wedlug konwencji przyjetej przez 
     5. intefejsy zaczynamy od I (np. IDictionary)
     
     6. wszystkie nazwy w języku angielskim
+
+kolory użyte przy layoucie
+#5c14a5 logo i inne fioletowe elementy
+#3c3c3c footer, jaśniejsze tło
+#272727 ostatnia, najciemniejsza stopka
+
+czcionki użyte:
+font awesome
+open sans
+
