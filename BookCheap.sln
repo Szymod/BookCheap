@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{E99FEAB2-9226-4732-B205-7F90B68D34D9}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6887476C-A165-4102-9B9C-21220B0D0C4A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto", "Common\Crypto\Crypto.csproj", "{1A68580F-149E-4B3E-A2C9-5EB90D551B96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopClient", "Clients\DesktopClient\DesktopClient\DesktopClient.csproj", "{CE091C53-1157-4184-A5C7-C20DA967CA99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{1A68580F-149E-4B3E-A2C9-5EB90D551B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A68580F-149E-4B3E-A2C9-5EB90D551B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A68580F-149E-4B3E-A2C9-5EB90D551B96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE091C53-1157-4184-A5C7-C20DA967CA99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE091C53-1157-4184-A5C7-C20DA967CA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE091C53-1157-4184-A5C7-C20DA967CA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE091C53-1157-4184-A5C7-C20DA967CA99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,5 +76,6 @@ Global
 		{AD766870-FBD3-4DF2-92B8-5ECB6F97230E} = {AE9C8A4C-2506-4035-A446-6678CD5CF68C}
 		{C8BFA4BC-4A30-4958-99AE-5741D4B6014E} = {0864CA60-CF0C-4A78-A7A6-A81059C013D2}
 		{1A68580F-149E-4B3E-A2C9-5EB90D551B96} = {6887476C-A165-4102-9B9C-21220B0D0C4A}
+		{CE091C53-1157-4184-A5C7-C20DA967CA99} = {0864CA60-CF0C-4A78-A7A6-A81059C013D2}
 	EndGlobalSection
 EndGlobal
