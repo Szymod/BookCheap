@@ -26,7 +26,8 @@ namespace BookCheap.Busines.DomainModel
         public string Phone { get; set; }
         public bool IsOwner { get { return UserHotels.Count > 0; } private set {} }
         public bool IsAdmin { get; set; }
-        
+        public bool IsBlocked { get; set; }
+
         public virtual ICollection<Application> UserApplications { get; set; }
         public virtual ICollection<Comment> UserComments { get; set; }
         public virtual ICollection<Hotel> UserHotels { get; set; }

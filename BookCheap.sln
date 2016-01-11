@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{688747
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto", "Common\Crypto\Crypto.csproj", "{1A68580F-149E-4B3E-A2C9-5EB90D551B96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopClient", "Clients\DesktopClient\DesktopClient\DesktopClient.csproj", "{CE091C53-1157-4184-A5C7-C20DA967CA99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopClient", "Clients\DesktopClient\DesktopClient.csproj", "{CE091C53-1157-4184-A5C7-C20DA967CA99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
