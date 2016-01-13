@@ -9,14 +9,17 @@ using BookCheap.Persistence.DataAccess;
 
 namespace BookCheap.Clients.WebClient.Controllers
 {
-    public class HotelListController : Controller
+    public class HotelListController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: HotelList
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.Hotels.ToList());
+            int currentPage = page ?? 1;
+            int pageSize = 10;
+            var hotels = db.Hotels.Skip((page.Value - 1) * pageSize).Take(pageSize);
+            return View(hotels);
         }
     }
 }
