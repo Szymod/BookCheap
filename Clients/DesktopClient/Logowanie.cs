@@ -21,6 +21,7 @@ namespace BookCheap.Clients.DesktopClient
         private void button1_Click(object sender, EventArgs e)
         {
             //odwołanie do WebServicu zrobionego przez Jędrzeja, jak w końcu go zrobi :)
+            //czyli już niebawem ;)
         }
     }
 }
