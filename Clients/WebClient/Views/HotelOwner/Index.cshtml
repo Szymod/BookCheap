@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<input id="input-700" name="kartik-input-700[]" type="file" multiple class="file-loading">
+
+
+@section Scripts{
+<script>
+    $("#input-700").fileinput({
+        uploadUrl: "/HotelOwner/PostFile",
+        uploadAsync: true,
+        maxFileCount: 5,
+        showUpload: false,
+        showRemove: false,
+        allowedFileExtensions: ["jpg", "img", "png", "jpeg"],
+        language: 'pl'
+    });
+</script>
+}
