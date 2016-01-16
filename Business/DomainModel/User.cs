@@ -32,6 +32,7 @@ namespace BookCheap.Busines.DomainModel
         public virtual ICollection<Comment> UserComments { get; set; }
         public virtual ICollection<Hotel> UserHotels { get; set; }
         public virtual ICollection<Reservation> UserReservations { get; set; }
+        public virtual ICollection<Session> Sessions { get; set; }
 
         public void SetPassword(string password)
         {
