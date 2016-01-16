@@ -32,6 +32,22 @@ namespace BookCheap.Clients.WebClient.Controllers
             return View();
         }
 
+        public ActionResult Application()
+        {
+
+            return View();
+        }
+
+        public ActionResult Application(Application Application)
+        {
+            if (ModelState.IsValid)
+            {
+               //formularz przeszedł
+            }
+
+            return View();
+        }
+
         public ActionResult Register()
         {
             return View();
