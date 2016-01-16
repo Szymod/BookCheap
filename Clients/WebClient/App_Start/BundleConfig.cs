@@ -21,10 +21,14 @@ namespace BookCheap.Clients.WebClient
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/fileinput.js",
+                      "~/Scripts/fileinput_locale_pl.js",
                       "~/Scripts/respond.js"));
+
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-fileinput/css/fileinput.css",
                       "~/Content/site.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
