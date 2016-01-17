@@ -21,5 +21,21 @@ namespace BookCheap.Clients.WebClient.Controllers
             var hotels = db.Hotels.Skip((page.Value - 1) * pageSize).Take(pageSize);
             return View(hotels);
         }
+
+        public ActionResult Application()
+        {
+
+            return View();
+        }
+
+        public ActionResult Application(Application Application)
+        {
+            if (ModelState.IsValid)
+            {
+                //formularz przeszedł
+            }
+
+            return View();
+        }
     }
 }
