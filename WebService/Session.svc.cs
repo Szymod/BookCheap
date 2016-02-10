@@ -15,7 +15,7 @@ namespace WebService
         {
         }
 
-        public string? GetSession(string login, string passwd)
+        public string GetSession(string login, string passwd)
         {
             return null;
             
