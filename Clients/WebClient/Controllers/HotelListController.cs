@@ -28,14 +28,14 @@ namespace BookCheap.Clients.WebClient.Controllers
             return View();
         }
 
-        public ActionResult Application(Application Application)
+        public ActionResult Application(Application application)
         {
             if (ModelState.IsValid)
             {
                 //formularz przeszedł
             }
 
-            return View();
+            return View(application);
         }
     }
 }

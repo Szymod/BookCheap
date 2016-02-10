@@ -124,5 +124,24 @@ namespace BookCheap.Clients.WebClient.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult TagList()
+        {
+
+            return View();
+        }
+
+        public ActionResult TagCreate([Bind(Include = "Name")] Tag tag)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Users.Add(user);
+                db.SaveChanges();
+                return RedirectToAction("TagList");
+            }
+
+            return View(tag);
+        }
+
     }
 }
