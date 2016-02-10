@@ -142,6 +142,12 @@ namespace BookCheap.Clients.WebClient.Controllers
 
             return View(tag);
         }
-
+        public ActionResult DeleteTag(int id)
+        {
+            Tag user = db.Tag.Find(id);
+            db.Tag.Remove(user);
+            db.SaveChanges();
+            return RedirectToAction("TagList");
+        }
     }
 }
