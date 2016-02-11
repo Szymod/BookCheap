@@ -8,9 +8,10 @@ namespace BookCheap.Busines.DomainModel
 {
    public class Session
     {
-       public Session()
+       public Session(string key, DateTime expiration)
        {
-
+            this.Key = key;
+            this.ExpirationDate = expiration;
        }
 
        public int UserId { get; set; }

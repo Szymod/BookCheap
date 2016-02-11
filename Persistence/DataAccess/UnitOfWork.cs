@@ -26,6 +26,7 @@ namespace BookCheap.Persistence.DataAccess
         private IRoomsTypesRepository _roomsTypes;
         private ITagsRepository _tags;
         private IUsersRepository _users;
+        private ISessionsRepository _sessions;
 
 
         public IApplicationsRepository Applications
@@ -38,6 +39,18 @@ namespace BookCheap.Persistence.DataAccess
                 }
 
                 return _applications;
+            }
+        }
+        public ISessionsRepository Sessions
+        {
+            get
+            {
+                if (_sessions == null)
+                {
+                    _sessions = new SessionsRepository(DbContext);
+                }
+
+                return _sessions;
             }
         }
         public IAttachmentsRepository Attachments
