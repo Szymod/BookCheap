@@ -9,10 +9,11 @@ using System.Web.Mvc;
 using BookCheap.Busines.DomainModel;
 using BookCheap.Persistence.DataAccess;
 using BookCheap.Clients.WebClient.App_Start;
+using BookCheap.Clients.WebClient.Code;
 
 namespace BookCheap.Clients.WebClient.Controllers
 {
-    //[Authorize]
+    [AdminAuthorize]
     public class AdminController : BaseController
     {
         // GET: /Admin/

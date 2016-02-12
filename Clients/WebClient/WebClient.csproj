@@ -141,7 +141,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Code\AdminAuthorizeAttribute.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelOwnerController.cs" />
     <Compile Include="Global.asax.cs">
@@ -216,6 +218,7 @@
     <Content Include="Views\Admin\TagCreate.cshtml" />
     <Content Include="Views\Admin\HotelTypeList.cshtml" />
     <Content Include="Views\Admin\RoomTypeList.cshtml" />
+    <Content Include="Views\Error\UnAuthorized.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
