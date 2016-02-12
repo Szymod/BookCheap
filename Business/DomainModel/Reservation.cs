@@ -15,5 +15,12 @@ namespace BookCheap.Busines.DomainModel
         public User User { get; set; }
         public DateTime DateFrom { get; set; }
         public DateTime DateTo { get; set; }
+        public StatusValue Status { get; set; }
+
+        public enum StatusValue
+        {
+            Accepted, Canceled
+        }
+       
     }
 }

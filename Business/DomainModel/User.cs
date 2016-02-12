@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Helpers;
+//using System.Web.Helpers;
 
 namespace BookCheap.Busines.DomainModel
 {
@@ -36,7 +36,7 @@ namespace BookCheap.Busines.DomainModel
 
         public void SetPassword(string password)
         {
-            Password = Crypto.Hash(password);
+           // Password = Crypto.Hash(password);
         }
     }
 }
