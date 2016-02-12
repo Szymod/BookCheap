@@ -22,5 +22,10 @@ namespace BookCheap.Clients.DesktopClient
         {
             //odwołanie do WebServicu zrobionego przez Jędrzeja, jak w końcu go zrobi :)
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

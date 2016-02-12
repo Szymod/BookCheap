@@ -11,6 +11,7 @@ using BookCheap.Persistence.DataAccess;
 
 namespace BookCheap.Clients.WebClient.Controllers
 {
+    //[Authorize]
     public class AdminController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -123,31 +124,6 @@ namespace BookCheap.Clients.WebClient.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        public ActionResult TagList()
-        {
-
-            return View();
-        }
-
-        public ActionResult TagCreate([Bind(Include = "Name")] Tag tag)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Users.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("TagList");
-            }
-
-            return View(tag);
-        }
-        public ActionResult DeleteTag(int id)
-        {
-            Tag user = db.Tag.Find(id);
-            db.Tag.Remove(user);
-            db.SaveChanges();
-            return RedirectToAction("TagList");
         }
     }
 }
