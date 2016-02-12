@@ -48,6 +48,7 @@
     <Compile Include="IReservationsRepository.cs" />
     <Compile Include="IRoomsRepository.cs" />
     <Compile Include="IRoomsTypesRepository.cs" />
+    <Compile Include="ISessionsRepository.cs" />
     <Compile Include="ITagsRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="IUsersRepository.cs" />

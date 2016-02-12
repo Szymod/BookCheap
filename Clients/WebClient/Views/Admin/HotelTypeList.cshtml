@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BookCheap.Busines.DomainModel.HotelType>
+
+
+@{
+    ViewBag.Title = "Typy hoteli";
+}
+
+<h2>Dostępne hotele:</h2>
+
+<table class="table">
+    <tr>
+      
+       
+        <th>
+            Tag
+        </th>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>
+
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+          
+
+        </tr>
+
+    }
+
+
+</table>

@@ -55,6 +55,7 @@
     <Compile Include="ReservationMapping.cs" />
     <Compile Include="RoomMapping.cs" />
     <Compile Include="RoomTypeMapping.cs" />
+    <Compile Include="SessionMapping.cs" />
     <Compile Include="TagMapping.cs" />
     <Compile Include="UserMapping.cs" />
   </ItemGroup>

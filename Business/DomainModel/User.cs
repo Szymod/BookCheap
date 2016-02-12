@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Helpers;
+//using System.Web.Helpers;
 
 namespace BookCheap.Busines.DomainModel
 {
@@ -26,15 +26,17 @@ namespace BookCheap.Busines.DomainModel
         public string Phone { get; set; }
         public bool IsOwner { get { return UserHotels.Count > 0; } private set {} }
         public bool IsAdmin { get; set; }
-        
+        public bool IsBlocked { get; set; }
+
         public virtual ICollection<Application> UserApplications { get; set; }
         public virtual ICollection<Comment> UserComments { get; set; }
         public virtual ICollection<Hotel> UserHotels { get; set; }
         public virtual ICollection<Reservation> UserReservations { get; set; }
+        public virtual ICollection<Session> Sessions { get; set; }
 
         public void SetPassword(string password)
         {
-            Password = Crypto.Hash(password);
+           // Password = Crypto.Hash(password);
         }
     }
 }
