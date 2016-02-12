@@ -35,9 +35,12 @@ namespace BookCheap.Clients.DesktopClient
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
-        {
-            r.Status = Reservation.StatusValue.Canceled;
-            u.Reservations.Update(r);
+        { 
+            using (UnitOfWork u = new UnitOfWork())
+            {
+                r.Status = Reservation.StatusValue.Canceled;
+                u.Reservations.Update(r);
+            }
 
         }
     }

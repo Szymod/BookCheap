@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookCheap.Persistence.DataAccess
 {
-    public class HotelsRepository : BaseRepository<Hotel>, IHotelsRepository
+    internal class HotelsRepository : BaseRepository<Hotel>, IHotelsRepository
     {
         public HotelsRepository(ApplicationDbContext context)
             : base(context)

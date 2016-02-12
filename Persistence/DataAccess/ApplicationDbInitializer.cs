@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookCheap.Persistence.DataAccess
 {
-    public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
+    internal class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
     {
         protected override void Seed(ApplicationDbContext context)
         {

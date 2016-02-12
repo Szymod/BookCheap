@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookCheap.Persistence.DataAccess
 {
-    public class CommentsRepository : BaseRepository<Comment>, ICommentsRepository
+    internal class CommentsRepository : BaseRepository<Comment>, ICommentsRepository
     {
         public CommentsRepository(ApplicationDbContext context)
             : base(context)

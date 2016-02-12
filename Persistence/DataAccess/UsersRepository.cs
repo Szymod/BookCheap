@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookCheap.Persistence.DataAccess
 {
-    public class UsersRepository : BaseRepository<User>, IUsersRepository
+    internal class UsersRepository : BaseRepository<User>, IUsersRepository
     {
         public UsersRepository(ApplicationDbContext context)
             : base(context)

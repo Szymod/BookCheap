@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookCheap.Persistence.DataAccess
 {
-    public class TagsRepository : BaseRepository<Tag>, ITagsRepository
+    internal class TagsRepository : BaseRepository<Tag>, ITagsRepository
     {
         public TagsRepository(ApplicationDbContext context)
             : base(context)

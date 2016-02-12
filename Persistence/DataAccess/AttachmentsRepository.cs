@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookCheap.Persistence.DataAccess
 {
-    public class AttachmentsRepository : BaseRepository<Attachment>, IAttachmentsRepository
+    internal class AttachmentsRepository : BaseRepository<Attachment>, IAttachmentsRepository
     {
         public AttachmentsRepository(ApplicationDbContext context)
             : base(context)

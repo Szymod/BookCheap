@@ -80,27 +80,27 @@ namespace BookCheap.Clients.WebClient.Controllers
                 var v = UnitOfWork.Users.GetAll().Where(a => a.Login.Equals(user.Login) && a.Password.Equals(user.Password)).FirstOrDefault();
                 if(v!=null)
                 {
-                    //if (user.IsBlocked == false)
-                    //{
+                    if (user.IsBlocked == false)
+                    {
                         Session["LoggedUser"] = v;
                         FormsAuthentication.SetAuthCookie(v.Login, false);
                         return RedirectToAction("AfterLogin");
-                    //}
-                    //else
-                    //{
-                    //    ViewBag.Message = "Użytkownik zablokowany.";
-                    //    return View("Login");
-                    //}
+                    }
+                    else
+                    {
+                        ViewBag.Message = "Użytkownik zablokowany.";
+                        return View(user);
+                    }
 
                 }
                 else
                 {
                     ViewBag.Message = "Niepoprawne dane logowania.";
-                    return View("Login");
+                    return View(user);
                 }
             }
 
-            return View("Index");
+            return View(user);
         }
 
         public ActionResult AfterLogin()

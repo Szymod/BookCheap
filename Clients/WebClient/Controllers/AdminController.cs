@@ -8,28 +8,27 @@ using System.Web;
 using System.Web.Mvc;
 using BookCheap.Busines.DomainModel;
 using BookCheap.Persistence.DataAccess;
+using BookCheap.Clients.WebClient.App_Start;
 
 namespace BookCheap.Clients.WebClient.Controllers
 {
     //[Authorize]
-    public class AdminController : Controller
+    public class AdminController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
         // GET: /Admin/
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            return View(UnitOfWork.Users.GetAll().ToList());
         }
 
         // GET: /Admin/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            if (!id.HasValue)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
+            User user = UnitOfWork.Users.GetById(id.Value);
             if (user == null)
             {
                 return HttpNotFound();
@@ -52,8 +51,7 @@ namespace BookCheap.Clients.WebClient.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(user);
-                db.SaveChanges();
+                UnitOfWork.Users.Add(user);
                 return RedirectToAction("Index");
             }
 
@@ -63,11 +61,11 @@ namespace BookCheap.Clients.WebClient.Controllers
         // GET: /Admin/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+            if (!id.HasValue)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
+            User user = UnitOfWork.Users.GetById(id.Value);
             if (user == null)
             {
                 return HttpNotFound();
@@ -84,8 +82,7 @@ namespace BookCheap.Clients.WebClient.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
-                db.SaveChanges();
+                UnitOfWork.Users.Update(user);
                 return RedirectToAction("Index");
             }
             return View(user);
@@ -94,11 +91,11 @@ namespace BookCheap.Clients.WebClient.Controllers
         // GET: /Admin/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
+            if (!id.HasValue)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
+            User user = UnitOfWork.Users.GetById(id.Value);
             if (user == null)
             {
                 return HttpNotFound();
@@ -111,19 +108,9 @@ namespace BookCheap.Clients.WebClient.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
-            db.SaveChanges();
+            User user = UnitOfWork.Users.GetById(id);
+            UnitOfWork.Users.Delete(user);
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

@@ -9,10 +9,10 @@ using BookCheap.Busines.Interfaces;
 
 namespace BookCheap.Persistence.DataAccess
 {
-    public class BaseRepository<T> : IBaseRepository<T> where T : class
+    internal class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-        protected ApplicationDbContext context;
-        protected DbSet<T> dbSet;
+        protected internal ApplicationDbContext context;
+        protected internal DbSet<T> dbSet;
 
         public BaseRepository(ApplicationDbContext context)
         {
