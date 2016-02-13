@@ -8,6 +8,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Newtonsoft.Json;
+using BookCheap.Clients.WebClient.Models;
 
 namespace BookCheap.Clients.WebClient.Controllers
 {
@@ -39,6 +41,9 @@ namespace BookCheap.Clients.WebClient.Controllers
             return View();
         }
 
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Register(User user)
@@ -46,24 +51,69 @@ namespace BookCheap.Clients.WebClient.Controllers
 
             if (ModelState.IsValid)
             {
-                var v = UnitOfWork.Users.GetAll().Where(a => a.Login.Equals(user.Login)).FirstOrDefault();
+                var response = Request["g-recaptcha-response"];
 
-                if (v == null)
-                {
-                    PasswordHash.CreateHash(user.Password);
-                    UnitOfWork.Users.Add(user);
-                    ModelState.Clear();
-                    user = null;
+                string secret = System.Configuration.ConfigurationManager.AppSettings["Secret-Key-ReCaptcha"];
+
+                var client = new System.Net.WebClient();
+                var reply =
+                    client.DownloadString(
+                        string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}",
+                    secret, response));
+
+                var captchaResponse = JsonConvert.DeserializeObject<CaptchaResponse>(reply);
+
+                //if (!captchaResponse.Success)
+                //{
+                //    if (captchaResponse.ErrorCodes.Count <= 0) return View();
+
+                //    var error = captchaResponse.ErrorCodes[0].ToLower();
+                //    switch (error)
+                //    {
+                //        case ("missing-input-secret"):
+                //            ViewBag.Message = "Brak parametru";
+                //            break;
+                //        case ("invalid-input-secret"):
+                //            ViewBag.Message = "Parametr nieprawidłowy";
+                //            break;
+
+                //        case ("missing-input-response"):
+                //            ViewBag.Message = "Brak odpowiedzi";
+                //            break;
+                //        case ("invalid-input-response"):
+                //            ViewBag.Message = "Odpowiedź nieprawidłowa";
+                //            break;
+
+                //        default:
+                //            ViewBag.Message = "Wystąpił problem. Spróbuj ponownie";
+                //            break;
+                //    }
+                //}
+
+                //else
+                //{
+
+                    var v = UnitOfWork.Users.GetAll().Where(a => a.Login.Equals(user.Login)).FirstOrDefault();
+
+                    if (v == null)
+                    {
+                        PasswordHash.CreateHash(user.Password);
+                        UnitOfWork.Users.Add(user);
+                        ModelState.Clear();
+                        user = null;
+                    }
+                    else
+                    {
+                        ViewBag.message = "Użytkownik o podanym loginie już istnieje.";
+                        return View("~/Views/Home/Register.cshtml");
+                    }
+            
                 }
-                else
-                {
-                    ViewBag.message = "Użytkownik o podanym loginie już istnieje.";
-                    return View("~/Views/Home/Register.cshtml");
-                }
+
+
+                return View();
             }
-
-            return View();
-        }
+        
 
         public ActionResult Login()
         {
