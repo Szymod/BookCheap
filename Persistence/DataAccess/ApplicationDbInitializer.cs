@@ -12,11 +12,23 @@ namespace BookCheap.Persistence.DataAccess
     {
         protected override void Seed(ApplicationDbContext context)
         {
-
-            context.Users.Add(new User {Login="Admin", Password="Admin1234", IsAdmin=true, IsBlocked=false });
-            context.SaveChanges();
             //TODO wypełnienie słowników i stworzenie konta administratora 
             base.Seed(context);
+
+            context.Users.Add(
+                new User
+                {
+                    Login = "Admin",
+                    Email = "Admin",
+                    Phone = "123123123",
+                    Firstname = "Admin",
+                    Lastname = "Admin",
+                    Password = "Admin1234",
+                    IsAdmin = true,
+                    IsBlocked = false
+                });
+            context.SaveChanges();
+           
         }
     }
 }
