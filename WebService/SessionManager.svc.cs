@@ -27,7 +27,7 @@ namespace WebService
                 {
                     string k = login + DateTime.Now.ToShortDateString()+DateTime.Now.Millisecond.ToString();
                     u.Sessions.Add(new Session(k, DateTime.Now+sessionTime));
-                    return null;
+                    return k;
                 }
                 else
                     return null;
