@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookCheap.Busines.DomainModel;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -11,6 +12,9 @@ namespace BookCheap.Persistence.DataAccess
     {
         protected override void Seed(ApplicationDbContext context)
         {
+
+            context.Users.Add(new User {Login="Admin", Password="Admin1234", IsAdmin=true, IsBlocked=false });
+            context.SaveChanges();
             //TODO wypełnienie słowników i stworzenie konta administratora 
             base.Seed(context);
         }
