@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using BookCheap.Busines.DomainModel;
 using BookCheap.Clients.WebClient.App_Start;
 using BookCheap.Persistence.DataAccess;
+using PagedList;
 
 namespace BookCheap.Clients.WebClient.Controllers
 {
@@ -17,10 +18,9 @@ namespace BookCheap.Clients.WebClient.Controllers
         public ActionResult Index(int? page)
         {
             int currentPage = page ?? 1;
-            int pageSize = 10;
-            var hotels = UnitOfWork.Hotels.GetAll();
-            //var hotels = UnitOfWork.Hotels.GetAll().Skip((page.Value - 1) * pageSize).Take(pageSize);
-            return View(hotels);
+            int pageSize = 5;
+            var hotels = UnitOfWork.Hotels.GetAll().OrderBy(n => n.Name);
+            return View(hotels.ToPagedList<Hotel>(currentPage,pageSize));
         }
 
         public ActionResult Application()

@@ -1,4 +1,6 @@
-﻿@model IEnumerable<BookCheap.Busines.DomainModel.Hotel>
+﻿@model PagedList.IPagedList<BookCheap.Busines.DomainModel.Hotel>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 
 @{
@@ -51,3 +53,9 @@
 
 
 </table>
+
+<div>
+    <br />
+        Strona @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) z @Model.PageCount
+        @Html.PagedListPager(Model,page => Url.Action("Index", new {page}))
+</div>
