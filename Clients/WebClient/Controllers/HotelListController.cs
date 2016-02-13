@@ -11,14 +11,15 @@ namespace BookCheap.Clients.WebClient.Controllers
 {
     public class HotelListController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        //private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: HotelList
         public ActionResult Index(int? page)
         {
             int currentPage = page ?? 1;
             int pageSize = 10;
-            var hotels = db.Hotels.Skip((page.Value - 1) * pageSize).Take(pageSize);
+            var hotels = UnitOfWork.Hotels.GetAll();
+            //var hotels = UnitOfWork.Hotels.GetAll().Skip((page.Value - 1) * pageSize).Take(pageSize);
             return View(hotels);
         }
 

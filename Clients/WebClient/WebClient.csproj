@@ -145,6 +145,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HotelListController.cs" />
     <Compile Include="Controllers\HotelOwnerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -164,6 +165,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Photo\stars_rating.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -192,6 +194,10 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\HotelList\stars_rating.jpeg" />
+    <Content Include="Views\HotelList\stars_rating.jpg">
+      <BrowseToURL>~/HotelList/stars_rating.jpg</BrowseToURL>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -219,6 +225,8 @@
     <Content Include="Views\Admin\HotelTypeList.cshtml" />
     <Content Include="Views\Admin\RoomTypeList.cshtml" />
     <Content Include="Views\Error\UnAuthorized.cshtml" />
+    <Content Include="Views\HotelList\Application.cshtml" />
+    <Content Include="Views\HotelList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

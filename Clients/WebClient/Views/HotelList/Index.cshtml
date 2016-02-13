@@ -9,28 +9,40 @@
 
 <table class="table">
     <tr>
-        <td class="col-md-3"rowspan="7"></td>
-        <th></th>
+        
+        <th width="200">
+
+        </th>
+        
         <th>
             Hotel
         </th>
+        
         <th>
             Ocena
         </th>
+
+        
     </tr>
    
 @foreach (var item in Model)
 {
     <tr>
         <td>
-            <img class="img-circle" src="" alt="Teksty" width="150" height="150" />
-            </td>
-        <td>
-
-            @Html.DisplayFor(modelItem => item.Name)
+            <img @*src="@Url.Content(@item.Photo)"*@ src="" alt="Hotel Foto" width="150" height="150" />
         </td>
+        
         <td>
 
+            <b><i>
+                @Html.DisplayFor(modelItem => item.Name)
+            </i></b>
+            <br />
+                @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        
+        <td>
+            <img src="@Url.Content("~/Photo/stars_rating.jpg")" alt="Hotel Foto" width="90" height="30" />   
         </td>
         
     </tr>
