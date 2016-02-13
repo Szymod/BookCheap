@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Web
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{E99FEAB2-9226-4732-B205-7F90B68D34D9}"
 EndProject
@@ -26,6 +26,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto", "Common\Crypto\Crypto.csproj", "{1A68580F-149E-4B3E-A2C9-5EB90D551B96}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopClient", "Clients\DesktopClient\DesktopClient.csproj", "{CE091C53-1157-4184-A5C7-C20DA967CA99}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EA214230-0467-4227-AB27-86C5385C3AA0} = {EA214230-0467-4227-AB27-86C5385C3AA0}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{53EE4083-DEFF-4574-B506-5738FB480169}"
 	ProjectSection(SolutionItems) = preProject

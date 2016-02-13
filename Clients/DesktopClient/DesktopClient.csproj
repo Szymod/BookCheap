@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,6 +67,11 @@
     <Compile Include="ReservationView.Designer.cs">
       <DependentUpon>ReservationView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service References\SessionManager\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Logowanie.resx">
       <DependentUpon>Logowanie.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +100,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\SessionManager\SessionManager.wsdl" />
+    <None Include="Service References\SessionManager\SessionManager.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SessionManager\SessionManager1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -117,6 +131,24 @@
       <Project>{ad766870-fbd3-4df2-92b8-5ecb6f97230e}</Project>
       <Name>Mappings</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SessionManager\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SessionManager\SessionManager.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SessionManager\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SessionManager\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SessionManager\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

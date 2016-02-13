@@ -18,10 +18,6 @@ namespace WebService
     {
         TimeSpan sessionTime = TimeSpan.Parse("00:30:00");
 
-        public void DoWork()
-        {
-        }
-
         public string GetSession(string login, string passwd)
         {
             using (UnitOfWork u = new UnitOfWork())

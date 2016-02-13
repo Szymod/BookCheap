@@ -12,6 +12,10 @@ namespace WebService
     public interface ISessionManager
     {
         [OperationContract]
-        void DoWork();
+        string GetSession(string login, string passwd);
+
+
+        [OperationContract]
+         bool IsSessionActive(string login, string session);
     }
 }
