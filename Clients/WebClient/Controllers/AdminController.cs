@@ -113,5 +113,57 @@ namespace BookCheap.Clients.WebClient.Controllers
             UnitOfWork.Users.Delete(user);
             return RedirectToAction("Index");
         }
+
+         public ActionResult HotelTypeList()
+        {
+
+           return View();
+       }
+     public ActionResult RoomTypeList()
+       {
+
+            return View();
+        }
+
+     public ActionResult DeleteHotelType(int id)
+     {
+         HotelType htype = db.HotelType.Find(id);
+         db.Tag.Remove(htype);
+         db.SaveChanges();
+         return RedirectToAction("HotelTypeList");
+     }
+
+       public ActionResult HotelTypeCreate([Bind(Include = "Name")] HotelType htype)
+        {
+            if (ModelState.IsValid)
+            {
+                db.HotelType.Add(htype);
+                db.SaveChanges();
+               return RedirectToAction("HotelTypeList");
+           }
+
+           return View(htype);
+       }
+
+       public ActionResult DeleteRoomType(int id)
+       {
+           RoomType rtype = db.RoomType.Find(id);
+           db.RoomType.Remove(rtype);
+           db.SaveChanges();
+           return RedirectToAction("RoomTypeList");
+       }
+
+       public ActionResult RoomTypeCreate([Bind(Include = "Name")] RoomType rtype)
+       {
+           if (ModelState.IsValid)
+           {
+               db.RoomType.Add(rtype);
+               db.SaveChanges();
+               return RedirectToAction("RoomTypeList");
+           }
+
+           return View(rtype);
+       }
+      
     }
 }
