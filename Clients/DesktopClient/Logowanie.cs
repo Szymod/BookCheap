@@ -28,17 +28,18 @@ namespace BookCheap.Clients.DesktopClient
 
             using (UnitOfWork u = new UnitOfWork())
             {
-                var x = u.Users.GetAll().Where(a => a.Login == _login && a.Password == _passwd).FirstOrDefault();
-                if (x.IsBlocked)
+                string msg;
+                WebService.SessionManager serv = new WebService.SessionManager();
+                msg = serv.GetSession(_login, _passwd);
+                if(msg == "Twoje konto jest zablokowane")
                 {
-                    MessageBox.Show("Twoje konto jest zablokowane.");
+                    MessageBox.Show(msg);
                 }
-                else
+                else if (msg != null && msg != "Twoje konto jest zablokowane")
                 {
-                    WebService.SessionManager serv = new WebService.SessionManager();
-                    SessionKey = serv.GetSession(_login, _passwd);
+                    SessionKey = msg;
                 }
-            }         
-        }   
+            }
+        }
     }
 }

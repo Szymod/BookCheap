@@ -25,8 +25,16 @@ namespace WebService
                 var x = u.Users.GetAll().Where(a => a.Login == login && a.Password == passwd).FirstOrDefault();
                 if (x != null)
                 {
-                    string k = login + DateTime.Now.ToShortDateString()+DateTime.Now.Millisecond.ToString();
-                    u.Sessions.Add(new Session(k, DateTime.Now+sessionTime));
+                    string k;
+                    if (!IsUserBlocked(login, passwd))
+                    {
+                        k = login + DateTime.Now.ToShortDateString() + DateTime.Now.Millisecond.ToString();
+                        u.Sessions.Add(new Session(k, DateTime.Now + sessionTime));                       
+                    }
+                    else
+                    {
+                        k = "Twoje konto jest zablokowane";
+                    }
                     return k;
                 }
                 else
@@ -40,6 +48,18 @@ namespace WebService
             {
                 var x = u.Sessions.GetAll().Where(a => a.User.Login == login && a.Key == session).FirstOrDefault();
                 if (x != null)
+                    return true;
+                else
+                    return false;
+            }
+        }
+
+        public bool IsUserBlocked(string login, string password)
+        {
+            using (UnitOfWork u = new UnitOfWork())
+            {
+                var x = u.Users.GetAll().Where(a => a.Login == login && a.Password == password).FirstOrDefault();
+                if (x.IsBlocked)
                     return true;
                 else
                     return false;
