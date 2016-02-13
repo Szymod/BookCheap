@@ -67,6 +67,11 @@
     <Compile Include="ReservationView.Designer.cs">
       <DependentUpon>ReservationView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SessionManager\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,6 +105,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\ServiceReference1\SessionManager.wsdl" />
+    <None Include="Service References\ServiceReference1\SessionManager.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\SessionManager1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\SessionManager\SessionManager.wsdl" />
     <None Include="Service References\SessionManager\SessionManager.xsd">
       <SubType>Designer</SubType>
@@ -131,8 +143,17 @@
       <Project>{ad766870-fbd3-4df2-92b8-5ecb6f97230e}</Project>
       <Name>Mappings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\WebService\WebService.csproj">
+      <Project>{ea214230-0467-4227-ab27-86c5385c3aa0}</Project>
+      <Name>WebService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebClient\WebClient.csproj">
+      <Project>{c8bfa4bc-4a30-4958-99ae-5741d4b6014e}</Project>
+      <Name>WebClient</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
     <WCFMetadataStorage Include="Service References\SessionManager\" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +167,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\SessionManager\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\SessionManager.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

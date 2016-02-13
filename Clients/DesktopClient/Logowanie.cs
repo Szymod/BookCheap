@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookCheap.Busines.DomainModel;
+using BookCheap.Persistence.DataAccess;
 
 namespace BookCheap.Clients.DesktopClient
 {
@@ -18,14 +19,26 @@ namespace BookCheap.Clients.DesktopClient
             InitializeComponent();
         }
 
+        public string SessionKey;
+
         private void button1_Click(object sender, EventArgs e)
         {
-            //odwołanie do WebServicu zrobionego przez Jędrzeja, jak w końcu go zrobi :)
-        }
+            string _login = textBox1.Text;
+            string _passwd = textBox2.Text;
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+            using (UnitOfWork u = new UnitOfWork())
+            {
+                var x = u.Users.GetAll().Where(a => a.Login == _login && a.Password == _passwd).FirstOrDefault();
+                if (x.IsBlocked)
+                {
+                    MessageBox.Show("Twoje konto jest zablokowane.");
+                }
+                else
+                {
+                    WebService.SessionManager serv = new WebService.SessionManager();
+                    SessionKey = serv.GetSession(_login, _passwd);
+                }
+            }         
+        }   
     }
 }
